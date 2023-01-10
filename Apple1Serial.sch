@@ -459,11 +459,11 @@ Wire Wire Line
 Wire Wire Line
 	4350 5050 4200 5050
 Text GLabel 2000 5100 2    50   Output ~ 0
-R
+T
 Wire Wire Line
 	1850 5100 2000 5100
 Text GLabel 4400 5150 2    50   Input ~ 0
-R
+T
 Wire Wire Line
 	4200 5150 4400 5150
 Text GLabel 2800 2950 0    50   Output ~ 0
