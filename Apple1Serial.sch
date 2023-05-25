@@ -1,7 +1,7 @@
 EESchema Schematic File Version 4
 EELAYER 30 0
 EELAYER END
-$Descr A4 11693 8268
+$Descr User 15236 8268
 encoding utf-8
 Sheet 1 1
 Title ""
@@ -30,7 +30,7 @@ F 9 "AT28C64B-15PU" H 3900 1350 50  0001 L CNN "Manufacturer_Part_Number"
 	1    2950 1950
 	1    0    0    -1  
 $EndComp
-Text Notes 7400 7500 0    50   ~ 0
+Text Notes 10950 7500 0    50   ~ 0
 Apple-1 Serial Interface
 $Comp
 L GAL20V8-15LP:GAL20V8B-15LP GAL20V8B1
@@ -765,17 +765,6 @@ Wire Wire Line
 	10600 5900 10200 5900
 Connection ~ 10600 5200
 $Comp
-L Connector:Conn_01x03_Male SERIAL1
-U 1 1 5F0216A9
-P 10050 900
-F 0 "SERIAL1" V 10158 712 50  0000 R CNN
-F 1 "SERIAL" V 10113 712 50  0001 R CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 10050 900 50  0001 C CNN
-F 3 "~" H 10050 900 50  0001 C CNN
-	1    10050 900 
-	0    -1   1    0   
-$EndComp
-$Comp
 L power:GND #PWR0118
 U 1 1 5F0268E3
 P 10150 1400
@@ -786,8 +775,6 @@ F 3 "" H 10150 1400 50  0001 C CNN
 	1    10150 1400
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	10150 1100 10150 1400
 Wire Wire Line
 	9400 5200 9400 5450
 Wire Wire Line
@@ -847,13 +834,11 @@ Wire Wire Line
 	10650 2950 10800 2950
 Connection ~ 10650 2950
 Wire Wire Line
-	11050 3650 11050 6450
+	11050 3650 11050 3950
 Wire Wire Line
 	11050 6450 8300 6450
 Wire Wire Line
-	10200 3750 10950 3750
-Wire Wire Line
-	10950 3750 10950 6350
+	10200 3750 10750 3750
 Wire Wire Line
 	10950 6350 8400 6350
 Text Label 10350 3650 2    50   ~ 0
@@ -871,10 +856,6 @@ F 3 "" H 9600 4750 50  0001 C CNN
 	1    9600 4750
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	9950 1100 8300 1100
-Wire Wire Line
-	10050 1100 10050 1300
 Wire Wire Line
 	10050 1300 8800 1300
 $Comp
@@ -921,9 +902,6 @@ F 3 "~" H 8800 900 50  0001 C CNN
 	1    8800 900 
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	8300 1050 8300 1100
-Connection ~ 8300 1100
 Wire Wire Line
 	8800 1050 8800 1300
 Connection ~ 8800 1300
@@ -1722,8 +1700,6 @@ Wire Wire Line
 Wire Wire Line
 	5100 2950 5200 2950
 Wire Wire Line
-	8300 1100 8300 5800
-Wire Wire Line
 	8400 1300 8400 5100
 Wire Wire Line
 	8750 5800 8300 5800
@@ -1802,4 +1778,190 @@ Wire Wire Line
 	4050 2050 4100 2050
 Wire Wire Line
 	4400 2050 4500 2050
+$Comp
+L Connector:Conn_01x04_Male SERIAL1
+U 1 1 63C7BCB6
+P 10050 600
+F 0 "SERIAL1" V 10158 312 50  0000 R CNN
+F 1 "SERIAL1" H 10158 790 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 10050 600 50  0001 C CNN
+F 3 "~" H 10050 600 50  0001 C CNN
+	1    10050 600 
+	0    -1   1    0   
+$EndComp
+Wire Wire Line
+	8300 1100 8300 5800
+Wire Wire Line
+	8300 1050 8300 1100
+Connection ~ 8300 1100
+Wire Wire Line
+	9950 1100 8300 1100
+Wire Wire Line
+	9950 1100 9950 800 
+Wire Wire Line
+	10050 800  10050 1300
+Wire Wire Line
+	10150 800  10150 1400
+$Comp
+L power:+5V #PWR0141
+U 1 1 63D2431A
+P 10450 1000
+F 0 "#PWR0141" H 10450 850 50  0001 C CNN
+F 1 "+5V" H 10465 1173 50  0000 C CNN
+F 2 "" H 10450 1000 50  0001 C CNN
+F 3 "" H 10450 1000 50  0001 C CNN
+	1    10450 1000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10450 1000 10250 1000
+Wire Wire Line
+	10250 1000 10250 800 
+$Comp
+L Interface_UART:MAX232 U232
+U 1 1 645D7665
+P 12700 3450
+F 0 "U232" H 12700 4831 50  0000 C CNN
+F 1 "MAX232" H 12700 4740 50  0000 C CNN
+F 2 "Package_DIP:DIP-16_W7.62mm_LongPads" H 12750 2400 50  0001 L CNN
+F 3 "http://www.ti.com/lit/ds/symlink/max232.pdf" H 12700 3550 50  0001 C CNN
+	1    12700 3450
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR0142
+U 1 1 64619BD0
+P 12700 1800
+F 0 "#PWR0142" H 12700 1650 50  0001 C CNN
+F 1 "+5V" H 12715 1973 50  0000 C CNN
+F 2 "" H 12700 1800 50  0001 C CNN
+F 3 "" H 12700 1800 50  0001 C CNN
+	1    12700 1800
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0143
+U 1 1 6461B51C
+P 12700 5050
+F 0 "#PWR0143" H 12700 4800 50  0001 C CNN
+F 1 "GND" H 12705 4877 50  0001 C CNN
+F 2 "" H 12700 5050 50  0001 C CNN
+F 3 "" H 12700 5050 50  0001 C CNN
+	1    12700 5050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	12700 1800 12700 2000
+Wire Wire Line
+	12700 4650 12700 4750
+$Comp
+L Device:CP C12
+U 1 1 64655A9C
+P 13850 2700
+F 0 "C12" H 13733 2654 50  0000 R CNN
+F 1 "10uF" H 13733 2745 50  0000 R CNN
+F 2 "Capacitor_THT:CP_Radial_D4.0mm_P2.00mm" H 13888 2550 50  0001 C CNN
+F 3 "~" H 13850 2700 50  0001 C CNN
+	1    13850 2700
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	13500 2550 13850 2550
+Wire Wire Line
+	13500 2850 13850 2850
+$Comp
+L Device:CP C11
+U 1 1 64703922
+P 11600 2700
+F 0 "C11" H 11483 2654 50  0000 R CNN
+F 1 "10uF" H 11483 2745 50  0000 R CNN
+F 2 "Capacitor_THT:CP_Radial_D4.0mm_P2.00mm" H 11638 2550 50  0001 C CNN
+F 3 "~" H 11600 2700 50  0001 C CNN
+	1    11600 2700
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	11600 2550 11900 2550
+Wire Wire Line
+	11600 2850 11900 2850
+$Comp
+L Connector:DB9_Female RS232
+U 1 1 64741FCD
+P 14100 3950
+F 0 "RS232" H 14280 3906 50  0000 L CNN
+F 1 "DB9_Female_MountingHoles" H 14280 3861 50  0001 L CNN
+F 2 "Connector_Dsub:DSUB-9_Female_Horizontal_P2.77x2.84mm_EdgePinOffset4.94mm_Housed_MountingHolesOffset7.48mm" H 14100 3950 50  0001 C CNN
+F 3 " ~" H 14100 3950 50  0001 C CNN
+	1    14100 3950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10950 3750 10950 6350
+Connection ~ 10750 3750
+Wire Wire Line
+	10750 3750 10950 3750
+Wire Wire Line
+	10750 3750 10750 3550
+Wire Wire Line
+	10750 3550 11900 3550
+Connection ~ 11050 3950
+Wire Wire Line
+	11050 3950 11050 6450
+Wire Wire Line
+	11050 3950 11900 3950
+$Comp
+L Device:CP C13
+U 1 1 647BC16E
+P 14350 2700
+F 0 "C13" H 14233 2654 50  0000 R CNN
+F 1 "10uF" H 14233 2745 50  0000 R CNN
+F 2 "Capacitor_THT:CP_Radial_D4.0mm_P2.00mm" H 14388 2550 50  0001 C CNN
+F 3 "~" H 14350 2700 50  0001 C CNN
+	1    14350 2700
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	14350 2850 14350 3050
+Wire Wire Line
+	14350 3050 13500 3050
+Wire Wire Line
+	14350 2550 14350 2000
+Wire Wire Line
+	14350 2000 12700 2000
+Connection ~ 12700 2000
+Wire Wire Line
+	12700 2000 12700 2250
+$Comp
+L Device:CP C14
+U 1 1 64813BF4
+P 14350 3500
+F 0 "C14" H 14233 3454 50  0000 R CNN
+F 1 "10uF" H 14233 3545 50  0000 R CNN
+F 2 "Capacitor_THT:CP_Radial_D4.0mm_P2.00mm" H 14388 3350 50  0001 C CNN
+F 3 "~" H 14350 3500 50  0001 C CNN
+	1    14350 3500
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	14350 3350 13500 3350
+Wire Wire Line
+	14350 3650 14350 4750
+Wire Wire Line
+	14350 4750 13800 4750
+Connection ~ 12700 4750
+Wire Wire Line
+	12700 4750 12700 5050
+Wire Wire Line
+	13500 3550 13700 3550
+Wire Wire Line
+	13700 3550 13700 3750
+Wire Wire Line
+	13700 3750 13800 3750
+Wire Wire Line
+	13500 3950 13800 3950
+Wire Wire Line
+	13800 4350 13800 4750
+Connection ~ 13800 4750
+Wire Wire Line
+	13800 4750 12700 4750
 $EndSCHEMATC
